@@ -4,14 +4,18 @@
     box-sizing: border-box;
 }
 body{
-   background-color: rgb(48, 194, 199);
+   background-color:rgb(35, 207, 207);
 }
 
 body h1{
-    color:rgb(204, 7, 82);
+    color:rgb(223, 106, 28);
     text-align: center;
-    font-family:cursive;
-    font-size: 3rem;
+    font-family: 'Rock Salt', cursive;
+    font-size: 2.8rem;
+}
+span{
+    color:brown;
+    text-shadow: black;
 }
 div.reset{
     display:flex;
@@ -19,7 +23,7 @@ div.reset{
 }
 p.reset{
     margin-top:30px;
-    color:rgb(17, 0, 255);
+    color:rgb(255, 0, 0);
     font-family:cursive;
     font-weight:bolder;
     font-size:2rem;
@@ -98,10 +102,6 @@ div.grid{
     border-left:3px solid black;
 }
 
-.winningmanager{
-    color:red;
-}
-
 .x::after{
     content:"x";
     font-family: cursive;
@@ -110,13 +110,25 @@ div.grid{
     font-size:80px;
 
 }
-.o::after{
+.o::before{
+    /* color:rgb(2, 19, 253); */
     content:"ｏ";
     display:flex;
     justify-content:center;
 
     font-size:80px;
 
+}
+
+.xcolor{
+    color:rgb(0, 0, 0);
+}
+
+.ocolor{
+    color:rgb(255, 255, 255);
+}
+.winningmanager{
+    color:rgb(91, 230, 137);
 }
 
 
@@ -128,7 +140,7 @@ div.turn{
 }
 div.turn p{
     color:slateblue;
-    font-family:cursive;
+    font-family:monospace;
     font-size:1.5rem;
     font-weight:bold;
 }
