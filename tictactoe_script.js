@@ -27,7 +27,14 @@ function resetgame(event)
 
 function statusmanager(tlm)
 {
-    turndiv.innerHTML=`${tlm} is winner`;
+    if(tlm==="x")
+    {
+        turndiv.innerHTML="x is winner";
+
+    }
+    else{
+        turndiv.innerHTML="ｏ is winner";
+    }
     gameislive=false;
     for(const celldiv of grid)
     {
