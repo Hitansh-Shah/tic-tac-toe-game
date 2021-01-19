@@ -3,6 +3,7 @@ const turndiv=document.getElementById("turn");
 const grid=document.querySelectorAll(".grid");
 var gameislive=true;
 var xisnext=true;
+
 for(const celldiv of grid){
     celldiv.classList.add("cursormanager");
 }
@@ -11,9 +12,10 @@ for(const celldiv of grid){
 function resetgame(event)
 {
     for(const celldiv of grid){
-        celldiv.classList.remove("x");
-        celldiv.classList.remove("o");
+        celldiv.classList.remove("x","xcolor");
+        celldiv.classList.remove("o","ocolor");
         celldiv.classList.remove("emptyclass");
+        celldiv.classList.remove("winningmanager");
         celldiv.classList.add("cursormanager");
         
     }
@@ -29,11 +31,11 @@ function statusmanager(tlm)
 {
     if(tlm==="x")
     {
-        turndiv.innerHTML="x is winner";
+        turndiv.innerHTML="\"x\" is winner";
 
     }
     else{
-        turndiv.innerHTML="ｏ is winner";
+        turndiv.innerHTML="\"ｏ\" is winner";
     }
     gameislive=false;
     for(const celldiv of grid)
@@ -56,34 +58,66 @@ function gamestatus()
 
     if(tl && tl===tm && tl===tr)
     {
+        grid[0].classList.add("winningmanager");
+        grid[1].classList.add("winningmanager");
+        grid[2].classList.add("winningmanager");
+
         statusmanager(tl);
     }
     else if(ml && ml===mm && ml===mr)
     {
+        
+        grid[3].classList.add("winningmanager");
+        grid[4].classList.add("winningmanager");
+        grid[5].classList.add("winningmanager");
         statusmanager(ml);
     }
     else if(bl && bl===bm && bl===br)
     {
+        
+        grid[6].classList.add("winningmanager");
+        grid[7].classList.add("winningmanager");
+        grid[8].classList.add("winningmanager");
         statusmanager(bl);
     }
     else if(tl && tl===ml && tl===bl)
     {
+        
+        grid[0].classList.add("winningmanager");
+        grid[3].classList.add("winningmanager");
+        grid[6].classList.add("winningmanager");
         statusmanager(tl);
     }
     else if(tm && tm===mm && tm===bm)
     {
+        
+        grid[1].classList.add("winningmanager");
+        grid[4].classList.add("winningmanager");
+        grid[7].classList.add("winningmanager");
         statusmanager(tm);
     }
     else if(tr && tr===mr && tr===br)
     {
+        
+        grid[2].classList.add("winningmanager");
+        grid[5].classList.add("winningmanager");
+        grid[8].classList.add("winningmanager");
         statusmanager(tr);
     }
     else if(tl && tl===mm && tl===br)
     {
+        
+        grid[0].classList.add("winningmanager");
+        grid[4].classList.add("winningmanager");
+        grid[8].classList.add("winningmanager");
         statusmanager(tl);
     }
     else if(tr && tr===mm && tr===bl)
     {
+        
+        grid[2].classList.add("winningmanager");
+        grid[4].classList.add("winningmanager");
+        grid[6].classList.add("winningmanager");
         statusmanager(tr);
     }
     else if(tl && tm && tr && ml && mm && mr && bl && bm && br)
@@ -121,7 +155,7 @@ function cellclick(event)
             if(xisnext)
             {
                 event.target.classList.add("emptyclass");
-                event.target.classList.add("x");
+                event.target.classList.add("x","xcolor");
                 event.target.classList.remove("cursormanager");
                 
                 gamestatus();
@@ -129,7 +163,7 @@ function cellclick(event)
             else
             {
                 event.target.classList.add("emptyclass");
-                event.target.classList.add("o");
+                event.target.classList.add("o","ocolor");
                 event.target.classList.remove("cursormanager");
                 
                 gamestatus();
