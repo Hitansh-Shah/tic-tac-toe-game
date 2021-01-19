@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+   background-color: rgb(48, 194, 199);
+}
+
+body h1{
+    color:rgb(204, 7, 82);
+    text-align: center;
+    font-family:cursive;
+    font-size: 3rem;
+}
+div.reset{
+    display:flex;
+    justify-content:center;
+}
+p.reset{
+    margin-top:30px;
+    color:rgb(17, 0, 255);
+    font-family:cursive;
+    font-weight:bolder;
+    font-size:2rem;
+}
+p.reset:hover{
+    color:slategray;
+    cursor: pointer;
+}
+
+div.container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.gamebox{
+    margin-top: 50px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap:1px;
+}
+
+
+div.grid{
+    height:100px;
+    width:100px;
+    
+}
+.cursormanager:hover{
+    cursor: pointer;
+}
+.tl{
+    border-right:3px solid black;
+    border-bottom:3px solid black;
+}
+.tm{
+    border-left:3px solid black;
+    border-bottom:3px solid black;
+    border-right:3px solid black;
+}
+.tr{
+    border-left:3px solid black;
+    border-bottom:3px solid black;
+}
+.ml{
+    border-right:3px solid black;
+    border-bottom:3px solid black;
+    border-top: 3px solid black;
+}
+.mm{
+    border-top:3px solid black;
+    border-right:3px solid black;
+    border-left:3px solid black;
+    border-bottom:3px solid black;
+}
+.mr{
+    border-left:3px solid black;
+    border-top:3px solid black;
+    border-bottom:3px solid black;
+}
+.bl{
+    border-top:3px solid black;
+    border-right:3px solid black;
+}
+.bm{
+    border-top:3px solid black;
+    border-left:3px solid black;
+    border-right:3px solid black;
+}
+.br{
+    border-top:3px solid black;
+    border-left:3px solid black;
+}
+
+.winningmanager{
+    color:red;
+}
+
+.x::after{
+    content:"x";
+    font-family: cursive;
+    display:flex;
+    justify-content:center;
+    font-size:80px;
+
+}
+.o::after{
+    content:"ｏ";
+    display:flex;
+    justify-content:center;
+
+    font-size:80px;
+
+}
+
+
+
+div.turn{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+}
+div.turn p{
+    color:slateblue;
+    font-family:cursive;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+.turn::first-letter{
+    color:rgb(0, 0, 0);
+    font-size:40px;
+}
+
+
+
