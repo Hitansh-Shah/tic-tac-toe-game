@@ -133,7 +133,7 @@ function gamestatus()
     else{
         if(xisnext)
         {
-            turndiv.innerHTML="ｏ is next";
+            turndiv.innerHTML="o is next";
             xisnext=false;
         }
         else
